@@ -1,0 +1,54 @@
+replicaCount: 3
+
+image:
+  repository: ghcr.io/ldest/sre-course/api
+  pullPolicy: IfNotPresent
+  tag: "c4f3862"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount: {} 
+
+podAnnotations: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+autoscaling: {}
+
+service:
+  type: ClusterIP
+  port: 8082
+
+ingress:
+  enabled: true
+  className: ""
+  annotations: {}
+  hosts:
+    - host: weather-api.sre-cource.example
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+
+variables:
+  ASPNETCORE_URLS: http://*:8082
+  CONNECTIONSTRINGS_PGCONNECTION: server=91.185.85.145; port=5000; database=weather; user id=postgres; password=postgres-pass;
+
+
+resources: 
+ limits:
+  cpu: 100m
+  memory: 128Mi
+ requests:
+  cpu: 25m
+  memory: 42Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
