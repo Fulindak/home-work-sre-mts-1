@@ -1,6 +1,0 @@
-apiVersion: v2
-name: weather-api
-description: A Helm chart for weather-api in k8s
-type: application
-version: 0.1.0
-appVersion: "1.16.0"
