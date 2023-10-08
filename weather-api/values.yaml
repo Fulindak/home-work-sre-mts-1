@@ -36,7 +36,7 @@ ingress:
 
 variables:
   ASPNETCORE_URLS: http://*:8082
-  CONNECTIONSTRINGS_PGCONNECTION: server=91.185.85.145; port=5000; database=weather; user id=postgres; password=postgres-pass;
+  CONNECTIONSTRINGS__PGCONNECTION: server=91.185.85.145; port=5000; database=weather; user id=postgres; password=postgres-pass;
 
 
 resources: 
